@@ -11,6 +11,7 @@ export interface ICards {
     index?: number;
 }
 
+// действия с карточками
 export interface IProductActions {
 	onClick: (event: MouseEvent) => void;
 }
@@ -21,11 +22,13 @@ export interface ICardsList {
     preview: string | null;
 }
 
+// страница с товаром
 export interface IPage {
     counter: number;
     catalog: HTMLElement[];
 }
 
+// модальное окно
 export interface IModalInfo {
 	content: HTMLElement;
 }
@@ -33,6 +36,7 @@ export interface IModalInfo {
 // информация о товарах в корзине
 export type IBasket = Pick<ICards, 'title' | 'price'>;
 
+// информация о  товарах в корзине
 export interface IBasketInfo {
     list: HTMLElement[];
     total: number
@@ -50,7 +54,7 @@ export interface IBuyerInfo {
     phone: string;
 }
 
-// Данные формы
+// данные формы
 export interface IFormInfo {
     valid: boolean;
     errors: string[];
@@ -63,6 +67,7 @@ export interface IFormInfo {
 //общие данные для заказа
 export type ICammonInfo = IPayment & IBuyerInfo;
 
+//данные для отправки заказа
 export type IShoppingPost = ICammonInfo & {
     total: number;
     items: string[];
@@ -86,6 +91,7 @@ export interface ISuccessfulOrder {
     total: number;
 }
 
+// информация об успешной форме
 export interface ISuccessfulFormInfo {
     total: number;
 }
